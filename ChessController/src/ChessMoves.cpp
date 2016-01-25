@@ -2,46 +2,46 @@
 // Created by Nathan Sosnovske on 1/24/16.
 //
 
-#include "Pieces/ChessMoves.h"
+#include "ChessMoves.h"
 
-bool ChessPieces::ChessMoves::ValidMove(ChessPieces pieceType, int fromX, int fromY, int toX, int toY)
+bool ChessController::ChessMoves::ValidMove(ChessPieceType pieceType, int fromX, int fromY, int toX, int toY)
 {
     auto doCall =  _moveFunctions[(int)pieceType];
     return doCall(fromX, fromY, toX, toY);
 }
 
-const ChessPieces::ChessMove ChessPieces::ChessMoves::_pawnFunction =
+const ChessController::ChessMove ChessController::ChessMoves::_pawnFunction =
         [] (int fromX, int fromY, int toX, int toY)
 {
     return false;
 };
-const ChessPieces::ChessMove ChessPieces::ChessMoves::_knightFunction =
+const ChessController::ChessMove ChessController::ChessMoves::_knightFunction =
         [] (int fromX, int fromY, int toX, int toY)
 {
     return false;
 };
-const ChessPieces::ChessMove ChessPieces::ChessMoves::_bishopFunction =
+const ChessController::ChessMove ChessController::ChessMoves::_bishopFunction =
         [] (int fromX, int fromY, int toX, int toY)
 {
     return false;
 };
-const ChessPieces::ChessMove ChessPieces::ChessMoves::_rookFunction =
+const ChessController::ChessMove ChessController::ChessMoves::_rookFunction =
         [] (int fromX, int fromY, int toX, int toY)
 {
     return false;
 };
-const ChessPieces::ChessMove ChessPieces::ChessMoves::_queenFunction =
+const ChessController::ChessMove ChessController::ChessMoves::_queenFunction =
         [] (int fromX, int fromY, int toX, int toY)
 {
     return false;
 };
-const ChessPieces::ChessMove ChessPieces::ChessMoves::_kingFunction =
+const ChessController::ChessMove ChessController::ChessMoves::_kingFunction =
         [] (int fromX, int fromY, int toX, int toY)
 {
     return true;
 };
 
-const std::vector<ChessPieces::ChessMove> ChessPieces::ChessMoves::_moveFunctions = {
+const std::vector<ChessController::ChessMove> ChessController::ChessMoves::_moveFunctions = {
         _pawnFunction, _knightFunction, _bishopFunction, _rookFunction, _queenFunction, _kingFunction
 };
 

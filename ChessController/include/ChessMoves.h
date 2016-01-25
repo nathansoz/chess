@@ -12,7 +12,7 @@
 
 
 
-namespace ChessPieces
+namespace ChessController
 {
     typedef std::function<bool(int, int, int, int)> ChessMove ;
 
@@ -21,7 +21,7 @@ namespace ChessPieces
 
 
     public:
-        static bool ValidMove(ChessPieces pieceType, int fromX, int fromY, int toX, int toY);
+        static bool ValidMove(ChessPieceType pieceType, int fromX, int fromY, int toX, int toY);
     private:
 
         static const ChessMove _pawnFunction;

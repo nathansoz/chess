@@ -5,16 +5,24 @@
 #ifndef CHESS_CHESSPIECES_H
 #define CHESS_CHESSPIECES_H
 
-namespace ChessPieces
+namespace ChessController
 {
-    enum ChessPieces
+    enum ChessPieceType
     {
         Pawn,
         Knight,
         Bishop,
         Rook,
         Queen,
-        King
+        King,
+        NoPiece
+    };
+
+    enum ChessPieceColor
+    {
+        Black,
+        White,
+        None
     };
 }
 
